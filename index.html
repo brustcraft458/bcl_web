@@ -1,0 +1,258 @@
+<html>
+    <head>
+        <title>
+            BCL STUDIO
+        </title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"></link>
+        
+        <script>
+          
+            document.addEventListener("DOMContentLoaded", function() {
+            var lazyloadImages;    
+          
+            if ("IntersectionObserver" in window) {
+              lazyloadImages = document.querySelectorAll(".lazy");
+              var imageObserver = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(function(entry) {
+                  if (entry.isIntersecting) {
+                    var image = entry.target;
+                    image.src = image.dataset.src;
+                    image.classList.remove("lazy");
+                    imageObserver.unobserve(image);
+                  }
+                });
+              });
+          
+              lazyloadImages.forEach(function(image) {
+                imageObserver.observe(image);
+              });
+            } else {  
+              var lazyloadThrottleTimeout;
+              lazyloadImages = document.querySelectorAll(".lazy");
+              
+              function lazyload () {
+                if(lazyloadThrottleTimeout) {
+                  clearTimeout(lazyloadThrottleTimeout);
+                }    
+          
+                lazyloadThrottleTimeout = setTimeout(function() {
+                  var scrollTop = window.pageYOffset;
+                  lazyloadImages.forEach(function(img) {
+                      if(img.offsetTop < (window.innerHeight + scrollTop)) {
+                        img.src = img.dataset.src;
+                        img.classList.remove('lazy');
+                      }
+                  });
+                  if(lazyloadImages.length == 0) { 
+                    document.removeEventListener("scroll", lazyload);
+                    window.removeEventListener("resize", lazyload);
+                    window.removeEventListener("orientationChange", lazyload);
+                  }
+                }, 20);
+              }
+          
+              document.addEventListener("scroll", lazyload);
+              window.addEventListener("resize", lazyload);
+              window.addEventListener("orientationChange", lazyload);
+            }
+          })
+          
+          
+          
+          
+          </script>
+        
+        <img class="lazy" width=0 height=0 data-src="wingrad.png"/>
+        <img class="lazy" width=0 height=0 data-src="kanan2.png"/>
+        <img class="lazy" width=0 height=0 data-src="kanan.png"/>
+        <img class="lazy" width=0 height=0 data-src="kiri2.png"/>
+        <img class="lazy" width=0 height=0 data-src="kiri.png"/>
+        <img class="lazy" width=0 height=0 data-src="bg.png" />
+        <img class="lazy" width=0 height=0 data-src="btnhd1.png" />
+        <img class="lazy" width=0 height=0 data-src="btnhd2.png" />
+        <img class="lazy" width=0 height=0 data-src="winbl.png" />
+        <img class="lazy" width=0 height=0 data-src="win.png" />
+        
+    </head>
+    <body>
+      
+      <script src="app.js"></script>
+      <script src="clientws.js"></script>
+            <style>
+                   
+                body {
+
+                
+                background-image: url(bg.png);
+                background-repeat: no-repeat;
+                background-size: 2500px 2500px;
+                background-attachment: unset;
+                
+                
+                }
+
+                .btnhdp {
+                background-color: rgba(0, 0, 0, 0);
+                display: inline-block;
+                height: 57px;
+                width: 131px;
+                margin-left: 1200px;
+                margin-top: -55px;
+                }
+    
+                .btnhdp1 {
+                background-image : url(btnhd1.png);    
+                display: inline-block;
+                height: 57px;
+                width: 131px;
+                margin-left: 1200px;
+                margin-top: -14px;
+                font-family: Verdana;
+                text-align: center;
+                text-decoration: none;
+                color: rgb(0, 255, 42);
+                text-shadow: 3px 3px 10px #000000;
+                
+                }
+                
+                .btnhdp1:hover {
+                background-image : url(btnhd2.png);  
+                text-decoration: none;  
+                color: rgb(0, 255, 157);
+                }
+
+                .btnhdp2 {
+                background-image : url(btnhd1.png);    
+                display: inline-block;
+                height: 57px;
+                width: 131px;
+                margin-left: 1065px;
+                margin-top: -57px;
+                font-family: Verdana;
+                text-align: center;
+                text-decoration: none;
+                color: rgb(0, 255, 42);
+                text-shadow: 3px 3px 10px #000000;
+                }
+
+                 .btnhdp2:hover {
+                background-image : url(btnhd2.png);    
+                text-decoration: none;
+                color: rgb(0, 255, 157);
+                }
+
+                .btnhdp3 {
+                background-image : url(btnhd1.png);    
+                display: inline-block;
+                height: 57px;
+                width: 131px;
+                margin-left: 930px;
+                margin-top: -57px;
+                font-family: Verdana;
+                text-align: center;
+                text-decoration: none;
+                color: rgb(0, 255, 42);
+                text-shadow: 3px 3px 10px #000000;
+                }
+
+                 .btnhdp3:hover {
+                background-image : url(btnhd2.png);    
+                text-decoration: none;
+                color: rgb(0, 255, 157);
+                }
+            
+                .btnhdp4 {
+                background-image : url(btnhd1.png);    
+                display: inline-block;
+                height: 57px;
+                width: 131px;
+                margin-right: 200px;
+                margin-top: -57px;
+                font-family: Verdana;
+                text-align: center;
+                text-decoration: none;
+                color: rgb(0, 255, 42);
+                text-shadow: 3px 3px 10px #000000;
+                }
+
+                 .btnhdp4:hover {
+                background-image : url(btnhd2.png);    
+                text-decoration: none;
+                color: rgb(0, 255, 157);
+                }
+
+                .win1 {
+                background-image : url(kosong.png), url(https://4.bp.blogspot.com/-NP-qIEmcUgI/WhjfOkDWknI/AAAAAAAAAEs/1ZWLbaOZIfYQ6tuaGIncvLBJDhktkUxYACLcBGAs/s640/blog%2Bgue%2Bgta%2Bsa%2B2.bmp);
+                display: inline-block;
+                background-repeat: no-repeat;
+                height: 500px;
+                width: 1000px;
+                background-size: 1000px 500px;
+                outline-color: black;
+                outline-width: 2px;
+                outline-style: outset;
+                
+                box-shadow: 3px 3px 5px 5px rgba(0, 0, 0, 80);  
+                margin-left: 200px;
+                margin-top: 57px;
+                text-shadow: 1px 1px 5px #000000;
+                text-align: left;
+                transition: 0.3s;
+                }
+                .win1:hover {
+                background-image : url(wingrad.png), url(https://4.bp.blogspot.com/-NP-qIEmcUgI/WhjfOkDWknI/AAAAAAAAAEs/1ZWLbaOZIfYQ6tuaGIncvLBJDhktkUxYACLcBGAs/s640/blog%2Bgue%2Bgta%2Bsa%2B2.bmp);
+                outline-color: rgb(14, 14, 14);
+                box-shadow: 5px 5px 5px 5px;
+                
+                }
+                
+                .btnlc1 {
+                background-image : url(kiri2.png); 
+                background-size: 70px;   
+                display: inline-block;
+                height: 70px;
+                width: 70px;
+                margin-left: -1100px;
+                margin-bottom: 225px;
+
+                }
+
+                .btnlc1:hover {
+                    background-image : url(kiri.png)
+                }
+
+                .btnlc2 {
+                background-image : url(kanan2.png); 
+                background-size: 70px;   
+                display: inline-block;
+                height: 70px;
+                width: 70px;
+                margin-left: 1240px;
+                margin-top: -305px;
+
+                }
+
+                .btnlc2:hover {
+                    background-image : url(kanan.png)
+                }
+
+                .h2 {
+                    margin-left: 200px;
+                    margin-top: -10000px;
+                }
+
+            </style>
+            
+            <a class="btnhdp" href="#" role="button"></a>     
+            <a class="btnhdp1" id="kambeng1" href="pege0" role="button">Check Now</a>
+            <a class="btnhdp2" href="#" role="button ">Social Media</a>
+            <a class="btnhdp3" href="#" role="button">About</a>
+            <a class="btnhdp4" href="#" role="button">Help</a>
+            <div>
+            <a2 class="win1"  id="kambeng2" onclick="openpeg('kambeng2')" href="pege0" role="button" ></a2>
+            <a2 class="btnlc1" onclick="minln()" href="#" role="button"></a2>
+            <a2 class="btnlc2" onclick="plusln()" href="#" role="button"></a2>
+            </div>
+            <br><br><br>  
+    </body>
+</html>
